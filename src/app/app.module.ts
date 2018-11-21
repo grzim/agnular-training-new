@@ -7,7 +7,9 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { UserContainerComponent } from './components/user-container/user-container.component';
 import { UserDisplayComponent } from './components/user-container/components/user-display/user-display.component';
 import { UserControlComponent } from './components/user-container/components/user-control/user-control.component';
-import { LengthPipe } from './helpers/piepes/length.pipe'
+import { LengthPipe } from './helpers/piepes/length.pipe';
+import { TrimPipe } from './helpers/piepes/trim.pipe';
+import { CutToPipe } from './helpers/piepes/cut-to.pipe'
 
 @NgModule({
     declarations: [
@@ -15,7 +17,9 @@ import { LengthPipe } from './helpers/piepes/length.pipe'
         UserContainerComponent,
         UserDisplayComponent,
         UserControlComponent,
-        LengthPipe
+        LengthPipe,
+        TrimPipe,
+        CutToPipe
     ],
     imports: [
         NoopAnimationsModule,
