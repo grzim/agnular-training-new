@@ -1,8 +1,19 @@
-Users:
-<div *ngFor="let user of users; index as i;">
-  {{i}}
-  <span *ngFor="let value of getValueOf(user); first as first"
-        [style.color] = "first? 'red' : 'black'">
-      {{value}}
-    </span>
-</div>
+<table>
+    <th>
+        Users:
+    </th>
+    <tr>
+        <td> index </td>
+        <td *ngFor="let name of getNames(users[0])">
+            {{name}}
+        </td>
+        <td> length </td>
+    </tr>
+    <tr *ngFor="let user of users; index as i;">
+      {{i}}
+      <td *ngFor="let value of getLineFor(user); first as first"
+            [style.color] = "first? 'red' : 'black'">
+          {{value}}
+        </td>
+    </tr>
+</table>
