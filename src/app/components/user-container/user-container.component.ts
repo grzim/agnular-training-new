@@ -11,7 +11,7 @@ import { getProp } from '../../helpers/helper-functions'
 export class UserContainerComponent implements OnInit {
   public usersToDisplay;
 
-  constructor(private usersService: UsersService) {
+  constructor(public usersService: UsersService) {
     this.usersToDisplay = this.usersService.getUsers();
   }
 
