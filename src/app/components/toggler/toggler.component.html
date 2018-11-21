@@ -1,0 +1,4 @@
+<div>
+  <button (click)="toggle()"><ng-content select="pre"></ng-content></button>
+</div>
+<ng-content *ngIf="isVisible"></ng-content>

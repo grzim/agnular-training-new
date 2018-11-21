@@ -1,4 +1,7 @@
-<app-user-control (sort)="sort($event)"></app-user-control>
-<app-user-display [users]="usersToDisplay"></app-user-display>
-
+<app-toggler #toggler>
+    <pre>toggle</pre>
+    <app-user-control (sort)="sort($event)"></app-user-control>
+    <app-user-display [users]="usersToDisplay" [appLogProps]="usersToDisplay"></app-user-display>
+</app-toggler>
+<app-proxy-toggler [componentToToggle]="toggler"></app-proxy-toggler>
 
