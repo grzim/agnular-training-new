@@ -1,0 +1,1 @@
+export const getProp = (props, obj) => props.reduce((acc, prop) => acc[prop], obj);
