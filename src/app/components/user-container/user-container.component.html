@@ -1,19 +1,4 @@
-<div>
-  Users:
-  <div *ngFor="let user of usersToDisplay; index as i;">
-    {{i}}
-    <span *ngFor="let value of getValueOf(user); first as first"
-          [style.color] = "first? 'red' : 'black'">
-      {{value}}
-    </span>
-  </div>
-</div>
-<div>
-  Sort by name <button (click)="sortBy('name')">by name</button>
-</div>
-<div>
-  Sort by age <button (click)="sortBy('age')">by age</button>
-</div>
-<div>
-  Sort by profession name <button (click)="sortBy('profession','name')">by profession name</button>
-</div>
+<app-user-control (sort)="sort($event)"></app-user-control>
+<app-user-display [users]="usersToDisplay"></app-user-display>
+
+

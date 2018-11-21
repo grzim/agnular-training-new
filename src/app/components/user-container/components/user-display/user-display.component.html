@@ -1,0 +1,8 @@
+Users:
+<div *ngFor="let user of users; index as i;">
+  {{i}}
+  <span *ngFor="let value of getValueOf(user); first as first"
+        [style.color] = "first? 'red' : 'black'">
+      {{value}}
+    </span>
+</div>

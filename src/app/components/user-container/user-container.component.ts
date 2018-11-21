@@ -15,13 +15,9 @@ export class UserContainerComponent implements OnInit {
     this.usersToDisplay = this.usersService.getUsers();
   }
 
-  getValueOf(obj) {
-    return (Object.keys(obj).map(key => (typeof obj[key] === "object") ? this.getValueOf(obj[key]) : obj[key]) as any).flat();
-  }
 
-
-  sortBy(...props) {
-    this.usersToDisplay = [...this.usersService.getUsers()].sort((a,b) => getProp(props, a) > getProp(props, b) ? 1 : -1);
+  sort(fn) {
+    this.usersToDisplay = [...this.usersService.getUsers()].sort(fn);
   }
 
   ngOnInit() {
