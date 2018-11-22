@@ -14,7 +14,10 @@ import { ShowDescriptionDirective } from './directives/show-description.directiv
 import { LogPropsDirective } from './directives/log-props.directive';
 import { FoldDirective } from './directives/fold.directive';
 import { TogglerComponent } from './components/toggler/toggler.component';
-import { ProxyTogglerComponent } from './components/proxy-toggler/proxy-toggler.component'
+import { ProxyTogglerComponent } from './components/proxy-toggler/proxy-toggler.component';
+import { ProductsContainerComponent } from './components/products-container/products-container.component';
+import { ProductDetailsComponent } from './components/products-container/components/product-details/product-details.component';
+import { TabsComponent } from './components/tabs/tabs.component'
 
 @NgModule({
     declarations: [
@@ -29,7 +32,10 @@ import { ProxyTogglerComponent } from './components/proxy-toggler/proxy-toggler.
         LogPropsDirective,
         FoldDirective,
         TogglerComponent,
-        ProxyTogglerComponent
+        ProxyTogglerComponent,
+        ProductsContainerComponent,
+        ProductDetailsComponent,
+        TabsComponent
     ],
     imports: [
         NoopAnimationsModule,

@@ -1,0 +1,5 @@
+<nav>
+  <a *ngFor="let routeName of ['users', 'products']"
+     [routerLink]="routeName"
+     routerLinkActive="active">{{routeName}}</a>
+</nav>

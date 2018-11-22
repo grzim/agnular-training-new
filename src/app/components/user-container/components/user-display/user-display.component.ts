@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core'
 import { User } from '../../../../helpers/classes/user'
+import { getValuesOf } from '../../../../helpers/helper-functions'
 
 @Component({
   selector: 'app-user-display',
@@ -20,7 +21,7 @@ export class UserDisplayComponent implements OnInit {
   }
 
   getValueOf(obj) {
-    return (Object.keys(obj).map(key => (typeof obj[key] === "object") ? this.getValueOf(obj[key]) : obj[key]) as any).flat();
+    return getValuesOf(obj);
   }
 
   getNames(obj, prefix = '') {

@@ -1,0 +1,14 @@
+<div class="flex-column">
+  Products:
+  <div>
+  <table>
+    <tr *ngFor="let product of products; index as i"
+    (click)="navigateTo(i)">
+      {{product.name}}
+    </tr>
+  </table>
+  </div>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</div>
