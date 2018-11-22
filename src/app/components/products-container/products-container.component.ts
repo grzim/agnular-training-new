@@ -16,20 +16,14 @@ export class ProductsContainerComponent implements OnInit {
   public isMature
   public localStorageProxy: LocalStorageProxyInterface
 
-  constructor(private productService: ProductsService,
-              private router: Router,
-              @Inject(STORAGE) storage: Storage) {
+  constructor(@Inject(STORAGE) storage: Storage) {
     this.localStorageProxy = createStorageProxy(storage)
-    this.products = this.productService.products
   }
 
   toggleIsMature() {
     this.localStorageProxy.isMature = !this.localStorageProxy.isMature
   }
 
-  navigateTo(i) {
-    this.router.navigate(['products', 'details', i])
-  }
 
   ngOnInit() {
   }

@@ -16,9 +16,14 @@ import { FoldDirective } from './directives/fold.directive';
 import { TogglerComponent } from './components/toggler/toggler.component';
 import { ProxyTogglerComponent } from './components/proxy-toggler/proxy-toggler.component';
 import { ProductsContainerComponent } from './components/products-container/products-container.component';
-import { ProductDetailsComponent } from './components/products-container/components/product-details/product-details.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { TabsComponent } from './components/tabs/tabs.component'
-import { STORAGE, storage } from './services/local-storage-proxy'
+import { STORAGE, storage } from './services/local-storage-proxy';
+import { UsersListComponent } from './components/user-container/components/users-list/users-list.component';
+import { UserDetailsComponent } from './components/user-details/user-details.component';
+import { ProductsListComponent } from './components/products-container/components/products-list/products-list.component';
+import { ListComponent } from './components/list/list.component';
+import { ObjectDetailsComponent } from './components/object-details/object-details.component'
 
 @NgModule({
     declarations: [
@@ -36,7 +41,12 @@ import { STORAGE, storage } from './services/local-storage-proxy'
         ProxyTogglerComponent,
         ProductsContainerComponent,
         ProductDetailsComponent,
-        TabsComponent
+        TabsComponent,
+        UsersListComponent,
+        UserDetailsComponent,
+        ProductsListComponent,
+        ListComponent,
+        ObjectDetailsComponent
     ],
     imports: [
         NoopAnimationsModule,

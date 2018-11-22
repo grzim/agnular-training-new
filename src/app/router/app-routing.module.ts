@@ -2,10 +2,15 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { UserContainerComponent } from '../components/user-container/user-container.component'
 import { ProductsContainerComponent } from '../components/products-container/products-container.component'
-import { ProductDetailsComponent } from '../components/products-container/components/product-details/product-details.component'
+import { ProductDetailsComponent } from '../components/product-details/product-details.component'
 import { IsMatureGuard } from './is-mature.guard'
+import { UserDetailsComponent } from '../components/user-details/user-details.component'
 
 
+export const outlets = {
+  userDetails: 'user-details',
+  productDetails: 'product-details',
+}
 
 const productChildRoutes = [
   { path: 'details/:id',
@@ -15,6 +20,8 @@ const productChildRoutes = [
 
 const routes: Routes = [
   { path: '', redirectTo: 'users', pathMatch: 'full' },
+  { path: 'user-details/:id', outlet: outlets.userDetails, component: UserDetailsComponent},
+  { path: 'product-details/:id', outlet: outlets.productDetails, component: ProductDetailsComponent},
   { path: 'users', component: UserContainerComponent},
   { path: 'products', component: ProductsContainerComponent, children: productChildRoutes},
 ];
