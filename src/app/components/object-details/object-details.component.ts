@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router'
 export class ObjectDetailsComponent implements OnInit {
 
   @Input() items;
+  item;
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {

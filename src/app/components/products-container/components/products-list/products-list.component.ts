@@ -10,6 +10,7 @@ import { outlets } from '../../../../router/app-routing.module'
 })
 export class ProductsListComponent implements OnInit {
 
+  products;
   constructor(private router: Router,
               private productService: ProductsService,) {
     this.products = this.productService.products
@@ -19,7 +20,7 @@ export class ProductsListComponent implements OnInit {
     this.router.navigate([
       {
         outlets: {
-          [outlets.productDetails]: ['product-details', index]
+          [outlets.productDetails]: [index]
         }
       }
     ])

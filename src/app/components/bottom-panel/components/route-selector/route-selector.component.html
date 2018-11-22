@@ -1,0 +1,17 @@
+<div> {{selectedValue}}
+  <select
+          (change)="navigateTo([{ outlets: { 'product-details': [$event.target.value] } }])">
+    <option
+            [value]="product.id"
+            *ngFor="let product of products">
+      {{product.id}}
+    </option>
+  </select>
+  <select  (change)="navigateTo([{outlets: { 'user-details': [$event.target.value] } }])">
+    <option
+            [value]="index"
+            *ngFor="let user of users; index as index">
+      {{index}}
+    </option>
+  </select>
+</div>

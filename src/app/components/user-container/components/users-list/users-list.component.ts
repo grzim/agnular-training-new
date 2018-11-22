@@ -10,6 +10,7 @@ import { outlets } from '../../../../router/app-routing.module'
 })
 export class UsersListComponent implements OnInit {
 
+  users;
   constructor(private router: Router,
               private usersService: UsersService,) {
     this.users = this.usersService.getUsers()
@@ -19,9 +20,11 @@ export class UsersListComponent implements OnInit {
     this.router.navigate([
       {
         outlets: {
-          [outlets.userDetails]: ['user-details', index]
+          [outlets.userDetails]: [index]
         }
       }
     ])
   }
+
+  ngOnInit(){}
 }

@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { UserContainerComponent } from '../components/user-container/user-container.component'
 import { ProductsContainerComponent } from '../components/products-container/products-container.component'
-import { ProductDetailsComponent } from '../components/product-details/product-details.component'
+import { ProductDetailsComponent } from '../components/bottom-panel/components/product-details/product-details.component'
 import { IsMatureGuard } from './is-mature.guard'
-import { UserDetailsComponent } from '../components/user-details/user-details.component'
+import { UserDetailsComponent } from '../components/bottom-panel/components/user-details/user-details.component'
 
 
 export const outlets = {
@@ -20,8 +20,8 @@ const productChildRoutes = [
 
 const routes: Routes = [
   { path: '', redirectTo: 'users', pathMatch: 'full' },
-  { path: 'user-details/:id', outlet: outlets.userDetails, component: UserDetailsComponent},
-  { path: 'product-details/:id', outlet: outlets.productDetails, component: ProductDetailsComponent},
+  { path: ':id', outlet: outlets.userDetails, component: UserDetailsComponent},
+  { path: ':id', outlet: outlets.productDetails, component: ProductDetailsComponent},
   { path: 'users', component: UserContainerComponent},
   { path: 'products', component: ProductsContainerComponent, children: productChildRoutes},
 ];

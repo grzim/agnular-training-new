@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
-import { ProductsService } from '../../services/products.service'
-import { UsersService } from '../../services/users.service'
+import { ProductsService } from '../../../../services/products.service'
+import { UsersService } from '../../../../services/users.service'
 
 @Component({
   selector: 'app-user-details',
@@ -9,6 +9,8 @@ import { UsersService } from '../../services/users.service'
   styleUrls: ['./user-details.component.scss']
 })
 export class UserDetailsComponent implements OnInit {
+
+  users;
 
   constructor(private usersService: UsersService) {
     this.users = this.usersService.getUsers();
