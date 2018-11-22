@@ -18,12 +18,8 @@ export class ProductsContainerComponent implements OnInit {
 
   constructor(@Inject(STORAGE) storage: Storage) {
     this.localStorageProxy = createStorageProxy(storage)
+    this.isMature = this.localStorageProxy.isMature
   }
-
-  toggleIsMature() {
-    this.localStorageProxy.isMature = !this.localStorageProxy.isMature
-  }
-
 
   ngOnInit() {
   }
