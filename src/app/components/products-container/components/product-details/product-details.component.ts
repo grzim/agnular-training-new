@@ -11,7 +11,7 @@ import { getValuesOf } from '../../../../helpers/helper-functions'
 })
 export class ProductDetailsComponent implements OnInit {
 
-  public product: Product = {};
+  public product: Product;
 
   constructor(route: ActivatedRoute, private productsService: ProductsService) {
     route.params.subscribe(

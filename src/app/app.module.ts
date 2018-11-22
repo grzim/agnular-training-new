@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 
-import { AppRoutingModule } from './app-routing.module'
+import { AppRoutingModule } from './router/app-routing.module'
 import { AppComponent } from './app.component'
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { UserContainerComponent } from './components/user-container/user-container.component';
@@ -18,6 +18,7 @@ import { ProxyTogglerComponent } from './components/proxy-toggler/proxy-toggler.
 import { ProductsContainerComponent } from './components/products-container/products-container.component';
 import { ProductDetailsComponent } from './components/products-container/components/product-details/product-details.component';
 import { TabsComponent } from './components/tabs/tabs.component'
+import { STORAGE, storage } from './services/local-storage-proxy'
 
 @NgModule({
     declarations: [
@@ -42,7 +43,9 @@ import { TabsComponent } from './components/tabs/tabs.component'
         BrowserModule,
         AppRoutingModule
     ],
-    providers: [],
+    providers: [
+        {provide: STORAGE, useValue: storage}
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {

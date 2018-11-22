@@ -1,6 +1,7 @@
 <div class="flex-column">
   Products:
   <div>
+    <input type="checkbox"  [value]="isMature" (click)="toggleIsMature()"> I am > 18 y.o.
   <table>
     <tr *ngFor="let product of products; index as i"
     (click)="navigateTo(i)">
